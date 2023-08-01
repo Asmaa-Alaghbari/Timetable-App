@@ -46,7 +46,7 @@ This project is a web-based timetable application developed by Asmaa Alaghbari d
 
 ### 3. JavaScript:
 
-1. `script.js`:
+1. `app.js`:
    The main JavaScript file includes the functionality and interactivity for the timetable application. It handles various actions such as adding and deleting timetable entries, saving and loading data to and from local storage, changing colors, and displaying the quote of the day.
 
 2. `quotes.js`:
