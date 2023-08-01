@@ -1,0 +1,823 @@
+/* style.css */
+
+/* Default */
+body {
+  background-color: #e5eef9;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  color: #011f3c;
+}
+
+/* Heading title */
+h1 {
+  color: #2a6587;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 5px;
+  text-shadow: 3px 0 #011f3c, 0 0 2px #631118;
+}
+
+h2,
+h3 {
+  color: #011f3c;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 1px;
+}
+
+/* Today */
+#currentDay {
+  color: #2a6587;
+  font-size: 3.5em;
+  letter-spacing: 1px;
+  text-shadow: 5px 0px #011f3c, 2px 2px 2px #2a6587;
+}
+
+/* Time & Date */
+#currentTime,
+#currentDate {
+  color: #2a6587;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-shadow: 1px 0 2px #2a6587;
+}
+
+/* Text */
+p {
+  color: #011f3c;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Heading logo */
+.logo {
+  width: 50%;
+  margin: 30px;
+  margin-top: 70px;
+}
+
+/* Sidenav default*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #011f3c;
+  overflow-x: hidden; /* content */
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+}
+
+/* Profile image in sidenav */
+.sidenav-image {
+  display: block;
+  width: 50%;
+  height: auto;
+  margin: 20px auto;
+  margin-bottom: 35px;
+  border-radius: 50%;
+  border-top: 4px solid #631118;
+  box-shadow: 10px 2px #011f3c, 0 10px #2a6587;
+}
+
+/* HTML files */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  margin: 2px auto;
+  font-size: 25px;
+  color: #e5eef9;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #dd947a;
+}
+
+.nav-logo {
+  max-width: 200px;
+  margin: 200px auto;
+}
+
+/* The open sidenav's icon (=) */
+.openNav {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 40px;
+  color: #011f3c;
+  cursor: pointer;
+}
+
+/* The close sidenav's icon (x) */
+a.closeNav {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Timetable & today-Table tables */
+table {
+  width: 90%;
+  margin: 10px auto;
+}
+
+/* Today table */
+table.today-table {
+  color: #631118;
+  background-color: transparent;
+  border: transparent;
+  border-bottom: 2px solid #011f3c;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Data input */
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-align: left;
+  font-size: medium;
+  cursor: text;
+  width: 100%;
+  height: auto;
+  color: #011f3c;
+}
+
+input[type="time"] {
+  width: 100px;
+}
+
+input[type="color"] {
+  width: 65px;
+  height: 29px;
+  margin-right: 10px;
+}
+
+/* Color Input */
+#tableColorContainer,
+#textColorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#tableColorContainer label,
+#textColorContainer label {
+  text-align: center;
+  margin: -8px auto;
+  padding: 4px 2px;
+  color: #e5eef9;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* All buttons */
+button,
+input[type="button"] {
+  color: #e5eef9;
+  background-color: #011f3c;
+  border: none;
+  border-radius: 2px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  margin: 5px 2px;
+  font-size: 0.9em;
+  text-align: center;
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+}
+
+button.delete-all {
+  width: 80px;
+}
+
+button:hover,
+input[type="button"]:hover,
+.previous-icon:hover,
+.next-icon:hover {
+  color: #dd947a;
+}
+
+button:active,
+input[type="button"]:active,
+.previous-icon:hover,
+.next-icon:hover {
+  background-color: #dd947a;
+  color: #011f3c;
+}
+
+/* Setting Bubble */
+.bubble {
+  position: fixed;
+  top: 90%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #2a6587;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 35px;
+  color: #e5eef9;
+}
+
+/* Setting Bubble slider */
+.slider-container {
+  position: fixed;
+  top: 90%;
+  right: 30px;
+  transform: translateY(-50%);
+  width: 80%;
+  height: 50px;
+  background-color: #2a6587;
+  border-radius: 50px;
+  overflow: hidden;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  transition: right 0.3s ease;
+}
+
+/* Bubble slider content */
+.settings-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.colorInput {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+/* Long text - For Timetable content */
+textarea {
+  width: 50px;
+  height: 30px;
+  color: #011f3c;
+  font-size: medium;
+  font-family: "Times New Roman", Times, serif;
+  border: transparent;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+/* For About & Contact */
+textarea.message {
+  width: 92%;
+  height: 100px;
+  background-color: #e5eef9;
+  border: 1px solid #631118;
+  border-radius: 3px;
+}
+
+/* timetable */
+.schedules {
+  background-color: white;
+  box-shadow: 10px 2px #011f3c, 0 10px #2a6587;
+  border-top: 1px solid #631118;
+  border-left: 1px solid #631118;
+  border-radius: 2px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+
+  text-align: center;
+  padding: 30px 10px;
+  margin: 40px auto;
+  width: 90%;
+}
+
+.schedules input {
+  text-align: center;
+}
+
+/* Table hover */
+.schedules:hover,
+.things-to-do:hover,
+.money-data:hover,
+.quote-of-day:hover,
+form:hover {
+  box-shadow: 10px 2px #dd947a, 0 10px #dd947a;
+}
+
+/* Container for To-do, money and quotes */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+  margin: 2px auto;
+}
+
+/* Container for things-to-do and quote-of-day */
+.money-quote-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin: 2px auto;
+}
+
+/* Things to do box */
+.things-to-do {
+  height: 600px;
+  margin: 20px 40px;
+  width: 90%;
+  padding: 20px 20px;
+  background-color: white;
+  box-shadow: 10px 2px #011f3c, 0 10px #2a6587;
+  border-top: 1px solid #631118;
+  border-left: 1px solid #631118;
+  border-radius: 2px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  text-align: left;
+}
+
+/* Money data box */
+.money-data {
+  height: 200px;
+  margin: 20px 40px 0;
+  padding: 5px auto;
+  background-color: white;
+  box-shadow: 10px 2px #011f3c, 0 10px #2a6587;
+  border-top: 1px solid #631118;
+  border-left: 1px solid #631118;
+  border-radius: 2px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  text-align: center;
+}
+
+/* Quote of the day box */
+.quote-of-day {
+  height: 400px;
+  margin: -80px 40px;
+  padding: 5px auto;
+  background-color: white;
+  box-shadow: 10px 2px #011f3c, 0 10px #2a6587;
+  border-top: 1px solid #631118;
+  border-left: 1px solid #631118;
+  border-radius: 2px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  text-align: center;
+}
+
+.checkbox-label {
+  display: flex;
+}
+
+.checkbox-label input[type="checkbox"] {
+  flex: 0 0 10%;
+}
+
+.checkbox-label input[type="textarea"] {
+  flex: 0 0 90%;
+}
+
+.checkbox-text {
+  padding: 5px;
+}
+
+/* For Setting & Contact pages */
+form {
+  display: grid;
+  max-width: 50%;
+  margin: 50px auto;
+  padding: 20px 5%;
+  align-items: center;
+  text-align: center;
+  border-radius: 2px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: white;
+  box-shadow: 10px 2px #011f3c, 0 10px #2a6587;
+  border-top: 1px solid #631118;
+  border-left: 1px solid #631118;
+}
+
+/* Profile image inside */
+#profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: 4px solid #631118;
+  box-shadow: 10px 2px #011f3c, 0 10px #2a6587;
+  margin-bottom: 20px;
+}
+
+/* Profile image outside */
+form.profile-img {
+  width: 25%;
+  border: transparent;
+  background-color: transparent;
+  box-shadow: 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text label */
+form label {
+  display: block;
+  text-align: left;
+  margin: 10px 1px 5px;
+  color: #011f3c;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="color"],
+form .message {
+  width: 90%;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #631118;
+  background-color: #2a6587;
+  text-align: left;
+  color: #011f3c;
+}
+
+/* Choose the photo */
+form input[type="file"] {
+  width: 90%;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #2a6587;
+  cursor: pointer;
+}
+
+/* Save info button */
+form input[type="submit"] {
+  background-color: #011f3c;
+  color: #e5eef9;
+  width: 80px;
+  height: 30px;
+  margin: 20px auto;
+  margin-bottom: 0;
+  border-radius: 2px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  color: #dd947a;
+  cursor: pointer;
+}
+
+form input[type="submit"]:active {
+  background-color: #dd947a;
+  color: #011f3c;
+}
+
+/* PLaceholder */
+form ::placeholder {
+  color: #e5eef9;
+  opacity: 0.8;
+}
+
+/* Profile card */
+.profile-card {
+  box-shadow: 0 4px 8px 0 #011f3c, 0 8px 4px 0 #2a6587;
+  max-width: 350px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Profile card photo */
+#profile-card-img {
+  width: 100%;
+}
+
+/* Chaange user info button text */
+#change-info {
+  text-decoration: none;
+  color: #e5eef9;
+}
+
+#change-info:hover {
+  color: #dd947a;
+}
+
+/* Quote author photo */
+img.quote-image {
+  border-radius: 50%;
+}
+
+/* Quote text */
+.quote-text {
+  font-style: italic;
+}
+
+/* Quote button */
+.random-quote {
+  margin-bottom: 15px;
+}
+
+/* End logo */
+.footer-logo {
+  margin-top: 20%;
+  max-width: 150px;
+  border-radius: 0;
+}
+
+/* Copywriting */
+.copywriting {
+  text-align: center;
+}
+
+/* Responsive */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 500px) {
+  /* Today */
+  #currentDay {
+    font-size: 2em;
+    text-shadow: 2px 0px #011f3c, 2px 2px 2px #2a6587;
+  }
+
+  /* Time & Date */
+  #currentTime,
+  #currentDate {
+    font-size: 0.8em;
+  }
+
+  h1 {
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    text-shadow: 1px 0 #011f3c, 0 0 2px #631118;
+  }
+
+  h2,
+  h3 {
+    font-size: 1em;
+  }
+
+  /* Text */
+  p {
+    margin: 5px;
+    font-size: 0.8em;
+  }
+
+  /* HTML files */
+  .sidenav a {
+    font-size: 20px;
+  }
+
+  .nav-logo {
+    max-width: 90px;
+    margin: 100px auto;
+  }
+
+  /* The open sidenav's icon (=) */
+  .openNav {
+    font-size: 30px;
+  }
+
+  /* The close sidenav's icon (x) */
+  a.closeNav {
+    font-size: 30px;
+  }
+
+  /* timetable */
+  .schedules {
+    padding: 30px 10px;
+    margin: 40px auto;
+    width: 90%;
+  }
+
+  .things-to-do {
+    width: 90%;
+    margin: 0px auto;
+    margin-left: 10px;
+  }
+
+  .money-data {
+    width: 90%;
+    margin: 0px auto;
+    margin-right: 10px;
+  }
+
+  .quote-of-day {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: -82px;
+    margin-right: 10px;
+  }
+
+  .money-data td {
+    font-size: 0.7em;
+  }
+
+  .setting-btns {
+    font-size: 0.9em;
+  }
+
+  /* Quote author photo */
+  img.quote-image {
+    border-radius: 50%;
+    width: 70px;
+  }
+
+  /* Profile card */
+  .profile-card {
+    width: 70%;
+  }
+
+  /* Profile image outside */
+  form.profile-img {
+    margin: 0px auto -30px;
+  }
+}
+
+/* Small devices & Medium devices(portrait tablets and large phones, 1000px and up) */
+@media only screen and (min-width: 500px) {
+  /* Today */
+  #currentDay {
+    font-size: 2.8em;
+    text-shadow: 3px 0px #011f3c, 2px 2px 2px #2a6587;
+  }
+
+  /* Time & Date */
+  #currentTime,
+  #currentDate {
+    font-size: 1em;
+  }
+
+  .nav-logo {
+    max-width: 120px;
+    margin: 100px auto;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 900px) {
+  /* Heading logo */
+  .logo {
+    width: 30%;
+    margin: 30px;
+    margin-top: 70px;
+  }
+
+  /* Today */
+  #currentDay {
+    font-size: 4em;
+    text-shadow: 2px 0px #011f3c, 2px 2px 2px #2a6587;
+  }
+
+  /* Time & Date */
+  #currentTime,
+  #currentDate {
+    font-size: 1.5em;
+  }
+
+  /* The open sidenav's icon (=) */
+  .openNav {
+    font-size: 50px;
+  }
+
+  /* HTML files */
+  .sidenav a {
+    font-size: 30px;
+  }
+
+  /* The open sidenav's icon (=) */
+  .openNav {
+    font-size: 35px;
+  }
+
+  /* The close sidenav's icon (x) */
+  a.closeNav {
+    font-size: 40px;
+  }
+
+  .things-to-do {
+    width: 80%;
+    height: 92%;
+    margin: 0px auto;
+    margin-left: 50px;
+  }
+
+  .money-data {
+    width: 90%;
+    height: 70%;
+    margin: 0px auto;
+    margin-right: 40px;
+  }
+
+  .quote-of-day {
+    width: 90%;
+    height: 100%;
+    margin: 0px auto;
+    margin-top: -20px;
+    margin-right: 40px;
+  }
+
+  button,
+  input[type="button"] {
+    width: 80px;
+    height: 30px;
+    font-size: 1em;
+  }
+
+  button.delete-all {
+    width: 110px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1275px) {
+  h1 {
+    font-size: 1.6em;
+    letter-spacing: 4px;
+    text-shadow: 1px 0 #011f3c, 0 0 2px #631118;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.7em;
+  }
+
+  /* Text */
+  p {
+    text-align: center;
+    margin: 5px;
+    font-size: 1.3em;
+  }
+
+  /* The open sidenav's icon (=) */
+  .openNav {
+    font-size: 50px;
+  }
+
+  /* HTML files */
+  .sidenav a {
+    font-size: 40px;
+  }
+
+  /* The open sidenav's icon (=) */
+  .openNav {
+    font-size: 40px;
+  }
+
+  /* The close sidenav's icon (x) */
+  a.closeNav {
+    font-size: 45px;
+  }
+
+  input[type="checkbox"] {
+    transform: scale(2);
+    margin-bottom: 20px;
+  }
+
+  .things-to-do {
+    width: 90%;
+    height: 95%;
+    margin-left: 100px;
+  }
+
+  .money-data {
+    width: 80%;
+    height: 70%;
+    margin: 0px auto;
+  }
+
+  .money-data td {
+    font-size: 1.3em;
+  }
+
+  .quote-of-day {
+    width: 80%;
+    height: 100%;
+    margin: 0px auto;
+    margin-top: -15px;
+  }
+
+  .setting-btns {
+    font-size: 1.2em;
+  }
+
+  button,
+  input[type="button"] {
+    width: 90px;
+    height: 40px;
+    font-size: 1.2em;
+  }
+
+  button.delete-all {
+    width: 130px;
+  }
+}
