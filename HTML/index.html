@@ -1,0 +1,309 @@
+<!-- index.html -->
+<!--
+  A simple web app named "Timetable" with a responsive layout, 
+  allowing users to manage and display their schedule, view the current date and time, 
+  and get a random quote of the day.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Timetable</title>
+    <meta
+      name="description"
+      content="Manage and display plans & schedules and get a random quote of the day."
+    />
+    <meta name="Asmaa Alaghbari" content="Timetable App" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/style.css" />
+  </head>
+
+  <body>
+    <!-- Logo & sidenav -->
+    <header>
+      <img src="/Logos/Timetable3.png" class="logo" />
+      <div id="sidenav" class="sidenav">
+        <img
+          src="/Images/profile.jpeg"
+          alt="profile image"
+          class="sidenav-image"
+        />
+        <a class="closeNav" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="setting.html">Setting</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <img src="/Logos/Timetable2.png" alt="logo" class="nav-logo" />
+      </div>
+      <span class="openNav" onclick="openNav()">&#9776;</span>
+    </header>
+
+    <!-- Current day, time and date -->
+    <nav>
+      <div>
+        <table class="today-table">
+          <tr class="current">
+            <td id="currentDay">Today</td>
+            <td id="currentTime">Time</td>
+            <td id="currentDate">Date</td>
+          </tr>
+        </table>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Timetable -->
+      <div class="all-boxes">
+        <div class="schedules">
+          <h2>Plans & schedules</h2>
+          <table class="schedule-table">
+            <tr>
+              <td><input type="time" value="00:00" /></td>
+              <td>
+                <input type="textarea" placeholder="____________________" />
+              </td>
+              <td><input type="button" value="Delete" /></td>
+            </tr>
+            <tr>
+              <td><input type="time" value="00:00" /></td>
+              <td>
+                <input type="textarea" placeholder="____________________" />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  value="Delete"
+                  class="delete-button"
+                  onclick="deleteRow(this)"
+                />
+              </td>
+            </tr>
+          </table>
+          <!-- Setting buttons -->
+          <div class="buttons-align">
+            <button class="new-row" onclick="insertNewRow()">Insert</button>
+            <button class="delete-all" onclick="deleteAllRows()">
+              Delete All
+            </button>
+          </div>
+        </div>
+
+        <div class="quote-money-container">
+          <div class="grid-container">
+            <!-- Things To-Do box -->
+            <div class="things-to-do">
+              <h3>Priorities:</h3>
+              <div class="priorities">
+                <!-- 1 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+                <!-- 2 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+                <!-- 3 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+              </div>
+              <br />
+
+              <h3>To-Do List:</h3>
+              <div class="to-do-list">
+                <!-- 1 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+                <!-- 2 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+                <!-- 3 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+                <!-- 4 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+                <!-- 5 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+              </div>
+              <br />
+
+              <h3>Things to Get Done:</h3>
+              <div class="things-to-get-done">
+                <!-- 1 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+                <!-- 2 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+                <!-- 3 -->
+                <label class="checkbox-label">
+                  <input type="checkbox" />
+                  <input
+                    type="textarea"
+                    class="checkbox-text"
+                    placeholder="____________________"
+                    maxlength="50"
+                /></label>
+              </div>
+            </div>
+            <div class="money-quote-container">
+              <!-- Money info -->
+              <div class="money-data">
+                <h3>Money data</h3>
+                <table>
+                  <tr>
+                    <td>Money In:</td>
+                    <td>
+                      <input type="text" placeholder="____________________" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Money Out:</td>
+                    <td>
+                      <input type="text" placeholder="____________________" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Comments:</td>
+                    <td>
+                      <input
+                        type="textarea"
+                        placeholder="____________________"
+                      />
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <!-- Quotes -->
+              <article class="quote-of-day">
+                <h3>Quote of the Day</h3>
+                <div class="quote-container">
+                  <img
+                    class="quote-image"
+                    src="/Images/author.jpg"
+                    alt="Quote image"
+                  />
+                  <p class="quote-text">Quote</p>
+                  <p class="quote-author">Author</p>
+                </div>
+                <button class="random-quote" onclick="displayRandomQuote()">
+                  Another
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bubble element -->
+        <div class="bubble" onclick="toggleSlider()">&#9881;</div>
+        <!-- Slider container -->
+        <div class="slider-container">
+          <!-- Save, Reset & Colors -->
+          <div class="settings-btns">
+            <button class="save-info" onclick="saveData()">Save</button>
+            <button id="reset-data" onclick="resetData()">Reset</button>
+            <div class="colorInput">
+              <div id="tableColorContainer">
+                <input type="color" id="tableColor" value="#ffffff" />
+                <label for="tableColor">Table</label>
+              </div>
+              <div id="textColorContainer">
+                <input type="color" id="textColor" value="#011f3c" />
+                <label for="textColor">Text</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        todayCurrent(); // Current day, time and date
+        tableColorSet(); // Set the tables' color
+        textColorSet(); // Set the tables' text color
+        loadData(); // Load data when the page is loaded
+        retrieveProfileImage(); // Update the sidenav image
+        displayRandomQuote(); // Display Quote
+        hideSlider(); // Hide the slider
+      });
+    </script>
+
+    <footer>
+      <div>
+        <img src="/Logos/Timetable1.png" alt="logo" class="footer-logo" />
+      </div>
+      <div class="copywriting">
+        <p>&copy; 2023 Timetable. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT-->
+    <script src="/Javascript/quotes.js"></script>
+    <script src="/Javascript/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!-- profile.html -->
+<!--
+  Represents a user profile page for the "Timetable" website. 
+  It displays the user's profile picture, username, and a brief description about the user. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Profile</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="/Logos/Timetable3.png" alt="logo" class="logo" />
+      <div id="sidenav" class="sidenav">
+        <img
+          src="/Images/profile.jpeg"
+          alt="profile image"
+          class="sidenav-image"
+        />
+        <a class="closeNav" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="setting.html">Setting</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <span class="openNav" onclick="openNav()">&#9776;</span>
+    </header>
+
+    <main class="profile-main">
+      <h1>Profile</h1>
+      <div class="profile-card">
+        <img
+          src="/Images/profile.jpeg"
+          alt="profile image"
+          id="profile-card-img"
+        />
+        <h2 id="username">Username</h2>
+        <p class="user-about">Anything about the user</p>
+        <button id="change-btn">
+          <a href="setting.html" id="change-info">Change</a>
+        </button>
+      </div>
+    </main>
+
+    <script>
+      // Function to load profile data from localStorage
+      function loadProfileData() {
+        const profileDataJSON = localStorage.getItem("profileData");
+        if (profileDataJSON) {
+          const profileData = JSON.parse(profileDataJSON);
+
+          // Display the profile picture
+          const profileCardImg = document.getElementById("profile-card-img");
+          profileCardImg.src = localStorage.getItem("profileImg");
+
+          // Display the username and about
+          const usernameElement = document.getElementById("username");
+          const aboutElement = document.querySelector(".user-about");
+          usernameElement.textContent = profileData.username;
+          aboutElement.textContent = profileData.about;
+        }
+      }
+
+      // Load profile data
+      window.addEventListener("load", loadProfileData);
+
+      // Update the sidenav image
+      document.addEventListener("DOMContentLoaded", () => {
+        retrieveProfileImage();
+      });
+    </script>
+
+    <footer>
+      <div>
+        <img src="/Logos/Timetable1.png" alt="logo" class="footer-logo" />
+      </div>
+      <div class="copywriting">
+        <p>&copy; 2023 Timetable. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT-->
+    <script src="/Javascript/app.js"></script>
+  </body>
+</html>

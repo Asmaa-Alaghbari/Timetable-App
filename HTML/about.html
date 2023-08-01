@@ -1,0 +1,67 @@
+<!-- about.html -->
+<!--
+  Presenting an overview of the Timetable App's features.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="/Logos/Timetable3.png" alt="logo" class="logo" />
+      <div id="sidenav" class="sidenav">
+        <img
+          src="/Images/profile.jpeg"
+          alt="profile image"
+          class="sidenav-image"
+        />
+        <a class="closeNav" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="setting.html">Setting</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <span class="openNav" onclick="openNav()">&#9776;</span>
+    </header>
+
+    <main>
+      <h1>About</h1>
+      <p>
+        This website is a Timetable App designed to help you organize and manage
+        your daily schedule effectively. It provides a user-friendly interface
+        where you can input and save your tasks, appointments, and notes for
+        each day of the week. The app allows you to customize the timetable
+        colors, generate random quotes for motivation, and change the background
+        color of the page. Stay organized and productive with the Timetable App!
+      </p>
+    </main>
+
+    <script>
+      // Update the sidenav image
+      document.addEventListener("DOMContentLoaded", () => {
+        retrieveProfileImage();
+      });
+    </script>
+
+    <footer>
+      <div>
+        <img src="/Logos/Timetable1.png" alt="logo" class="footer-logo" />
+      </div>
+      <div class="copywriting">
+        <p>&copy; 2023 Timetable. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT-->
+    <script src="/Javascript/app.js"></script>
+  </body>
+</html>
